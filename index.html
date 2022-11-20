@@ -1,0 +1,190 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Day 2</title>
+</head>
+<body>
+    <h2>Q1. What is box sizing?</h2>
+    <p>
+        Box-sizing property defines how the width and height gets applied on an element.
+    Default value of box-sizing is content-box, in this case the actual width of the box
+    will be equal to the border and padding and width of the box ( Actual width : width
+    + border + padding ). <br>
+    In case when box-sizing is set to be border-box, then the actual width will be equal
+    to the width of the box itself. Means if we will increase the padding or border of
+    the box then it will not increase the width of the box.
+    <ol type="a">
+        <li>content-box (Default)</li>
+        <li>border-box</li>
+    </ol>
+    </p>
+    
+    <pre>
+        <strong>HTML:</strong>
+        &lt;div class="content-box"&gt;Content box&lt;/div&gt;
+        &lt;br&gt;
+        &lt;div class="border-box"&gt;Border box&lt;/div&gt;
+        <br>
+        <strong>CSS:</strong>
+        <br>
+        div {
+            width: 160px;
+            height: 80px;
+            padding: 20px;
+            border: 8px solid rgb(47, 0, 255);
+            background: rgb(240, 240, 95);
+            }
+            
+        .content-box{
+                box-sizing: content-box;
+                }
+        .border-box {
+                box-sizing: border-box;
+                }
+    </pre>
+    <br>
+    <h2>Q2. What is animation-delay?</h2>
+    <p>
+        It is a sub-property of CSS animation. It defines how long the animation has to
+        wait before starting. Using the animation-delay property, you define the delay by
+        specifying the number of seconds or milliseconds it should take before playing
+    </p>
+    <pre>
+        <strong>HTML:-</strong>
+        &lt;div&gt;&lt;/div&lt; <br>
+        CSS:-
+        div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: moving 5s infinite;
+        animation-delay: 3s;
+        }
+        <br>
+        @keyframes moving {
+        from {left: 0px;}
+        to {left: 200px;}
+        }
+    </pre>
+    <br>
+    <h2>Q3. Which property will you use to merge cells horizontally in a grid?</h2>
+    <p>
+        grid-column-start and grid-column-end property can be used to merge cells
+        horizontally. It also has a shorthand i.e., grid-column: start/end. If you want to merge
+        two elements in row then we will have to use grid-row property inside the child
+        element. Remember these properties are applicable only to child elements not to
+        parent elements
+    </p>
+    <pre>
+        HTML:-
+        <br>
+
+        &lt;div class="grid-container"&gt;
+        &lt;div class="item item1"&gt;1&lt;/div&gt;
+        &lt;div class="item"&gt;2&lt;/div&gt;
+        &lt;div class="item"&gt;3&lt;/div&gt;
+        &lt;div class="item"&gt;4&lt;/div&gt;
+        &lt;div class="item">&gt;&lt;/div&gt;
+        &lt;div class="item">&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        <br>
+        CSS:-
+        <br>
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 15px;
+        background-color: #2196F3;
+        padding: 20px;
+        text-align: center;
+        }
+        <br>
+        .item{
+        background-color: aliceblue;
+        border: #2196F3;
+        border-radius: 20px;
+        }
+        <br>
+        item1{
+            grid-column: 1/4;
+            }
+    </pre>
+    <br>
+    <h2>Q4. Which property will you use to merge cells vertically in a grid?</h2>
+    <p>
+        grid-row-start and grid-row-end property can be used to merge cells
+        vertically. It also has a shorthand i.e., grid-row: start/end. Remember these properties are applicable only to child elements not to
+        parent elements
+    </p>
+    <pre>
+        HTML:-
+        <br>
+
+        &lt;div class="grid-container"&gt;
+        &lt;div class="item item1"&gt;1&lt;/div&gt;
+        &lt;div class="item"&gt;2&lt;/div&gt;
+        &lt;div class="item"&gt;3&lt;/div&gt;
+        &lt;div class="item"&gt;4&lt;/div&gt;
+        &lt;div class="item">&gt;&lt;/div&gt;
+        &lt;div class="item">&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        <br>
+        CSS:-
+        <br>
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 15px;
+        background-color: #2196F3;
+        padding: 20px;
+        text-align: center;
+        }
+        <br>
+        .item{
+        background-color: aliceblue;
+        border: #2196F3;
+        border-radius: 20px;
+        }
+        <br>
+        item1{
+            grid-row: 1/4;
+            }
+    </pre>
+    <h2>Q4. What is a Box-model?</h2>
+    <p>
+        The box model in CSS is a set of rules that determine how your web page is
+        rendered on the internet. In this model, a rectangular box is generated for HTML
+        elements. This box consists of first content, then padding, then border, and finally
+        margin.
+        <br>
+        <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png" alt="css-box-model" height="150px" width="150px">
+    </p>
+    <br>
+    <h2>Q5. What is the difference between display none and visibility hidden?</h2>
+    <p>
+        <strong>display: none;</strong>
+        <ul>
+            <li>The display: none property is used to hide elements without deleting them. It
+                does not take up any space.</li>
+            <li>In this case, the tag is removed from the page, which allows other elements
+                to fill in.</li>
+        </ul>
+        <br>
+        <strong>visibility: hidden;</strong>
+        <ul>
+        <li>The visibility: hidden property also hides an element, but affects the layout
+            i.e., it takes up the space.</li>
+        <li>The element is hidden from view but not the page flow.</li>
+        </ul>
+    </p>
+    <br>
+    
+        <br>
+    </p>
+</body>
+</html>
